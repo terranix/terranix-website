@@ -1,17 +1,8 @@
-baseURL: "http://tech.ingolf-wagner.de"
+baseURL: "http://terranix.org"
 languageCode: "en-us"
-title: "Techblog - Ingolf Wagner"
+title: "terranix.org"
 pygmentsUseClasses: true
 sectionPagesMenu: "main"
-
-params:
-  showAllPages: false
-  featured:
-    - /nixos/krops/
-    - /art/graffiti-wallpapers/
-    - /nixos/nix-instantiate/
-  mainSections:
-    - nixos
 
 markup:
   tableOfContents:
@@ -46,7 +37,7 @@ menu:
       weight: 2
       title: RTF(riendly)M
 
-    - name:  "Options"
+    - name:  "options"
       url: "/options"
       identifier: "options"
       weight: 3

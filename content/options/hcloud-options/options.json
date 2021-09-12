@@ -1,0 +1,173 @@
+[
+  {
+    "label": "hcloud.enable",
+    "type": "boolean",
+    "description": "Whether to enable hcloud provider\nSee https://www.terraform.io/docs/providers/hcloud/index.html for documentation.\n.",
+    "example": "true",
+    "default": "false",
+    "defined": "module/provider.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/provider.nix"
+  },
+  {
+    "label": "hcloud.export.nix",
+    "type": "null or string",
+    "description": "Export hcloud information as nix file.\nUseful when if you want to import\nrun a NixOS script after the terraform.\n",
+    "example": "null",
+    "default": "null",
+    "defined": "module/export.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/export.nix"
+  },
+  {
+    "label": "hcloud.nixserver",
+    "type": "attribute set of submodules",
+    "description": "create a nixos server, via nixos-infect.\n",
+    "example": "null",
+    "default": "{}",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.backups",
+    "type": "boolean",
+    "description": "enable backups or not\n",
+    "example": "null",
+    "default": "false",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.channel",
+    "type": "string",
+    "description": "nixos channel to install\n",
+    "example": "null",
+    "default": "\"nixos-19.09\"",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.configurationFile",
+    "type": "null or path",
+    "description": "The configuration.nix,\nonly used by the initial\nprovisioning by nixos-infect.\n",
+    "example": "null",
+    "default": "null",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.enable",
+    "type": "boolean",
+    "description": "Whether to enable nixserver.",
+    "example": "true",
+    "default": "false",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.name",
+    "type": "string",
+    "description": "name of the server\n",
+    "example": "null",
+    "default": "\"nixserver-‹name›\"",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.provisioners",
+    "type": "list of attribute sets",
+    "description": "provision steps. see `hcloud.server.provisioners`.\n",
+    "example": "null",
+    "default": "[]",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.nixserver.<name>.serverType",
+    "type": "string",
+    "description": "Hardware equipment.This options influences costs!\n",
+    "example": "null",
+    "default": "\"cx11\"",
+    "defined": "module/nixserver.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/nixserver.nix"
+  },
+  {
+    "label": "hcloud.provider.endpoint",
+    "type": "null or string",
+    "description": "Hetzner Cloud API endpoint,\ncan be used to override the default API Endpoint https://api.hetzner.cloud/v1\n",
+    "example": "null",
+    "default": "null",
+    "defined": "module/provider.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/provider.nix"
+  },
+  {
+    "label": "hcloud.provider.token",
+    "type": "string",
+    "description": "You need an API token to use the API.\nSign in into the Hetzner Cloud Console choose a project,\ngo to Access → Tokens, and create a new token. Make sure\nto copy the token because it won’t be shown to you again.\nA token is bound to a project, to interact with the API of another\nproject you have to create a new token inside the project\n\nIf you use a variable you can set it via the environment variable\nTF_VAR_hcloud_api_token.\n",
+    "example": "null",
+    "default": "\"${ var.hcloud_api_token }\"",
+    "defined": "module/provider.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/provider.nix"
+  },
+  {
+    "label": "hcloud.server",
+    "type": "attribute set of submodules",
+    "description": "servers deployed to the hcloud.\n",
+    "example": "null",
+    "default": "{}",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.backups",
+    "type": "boolean",
+    "description": "enable backups or not\n",
+    "example": "null",
+    "default": "false",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.enable",
+    "type": "boolean",
+    "description": "Whether to enable really deploy server\n.",
+    "example": "true",
+    "default": "false",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.image",
+    "type": "string",
+    "description": "image to spawn on the server\n",
+    "example": "null",
+    "default": "\"ubuntu-18.04\"",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.name",
+    "type": "string",
+    "description": "name of the server\n",
+    "example": "null",
+    "default": "\"‹name›\"",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.provisioners",
+    "type": "list of attribute sets",
+    "description": "provision steps.\n\n`file` and `remote-exec` steps\nautomatically get the connection\npart setup, if you configure\nthe `provisioner.privateKeyFile`\nparameter.\n",
+    "example": "[{\"file\":{\"destination\":\"/root/.zshrc\",\"source\":\"~/.zshrc\"}},{\"remote-exec\":{\"inline\":[\"shutdown -r +1\"]}}]",
+    "default": "[]",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  },
+  {
+    "label": "hcloud.server.<name>.serverType",
+    "type": "string",
+    "description": "Hardware equipment. This options influences costs!\n",
+    "example": "null",
+    "default": "\"cx11\"",
+    "defined": "module/server.nix",
+    "url": "https://github.com/terranix/terranix-hcloud/tree/terraform-0.12/module/server.nix"
+  }
+]

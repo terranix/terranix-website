@@ -1,0 +1,299 @@
+[
+  {
+    "label": "backend.etcd",
+    "type": "null or submodule",
+    "description": "etcd backend\nhttps://www.terraform.io/docs/backends/types/etcd.html\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.etcd.endpoints",
+    "type": "string",
+    "description": "A space-separated list of the etcd endpoints\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.etcd.password",
+    "type": "null or string",
+    "description": "the password\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.etcd.path",
+    "type": "string",
+    "description": "The path where to store the state\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.etcd.username",
+    "type": "null or string",
+    "description": "the username\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.local",
+    "type": "null or submodule",
+    "description": "local backend\nhttps://www.terraform.io/docs/backends/types/local.html\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.local.path",
+    "type": "string",
+    "description": "path to the state file\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.s3",
+    "type": "null or submodule",
+    "description": "s3 backend\nhttps://www.terraform.io/docs/backends/types/s3.html\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.s3.bucket",
+    "type": "string",
+    "description": "bucket name\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.s3.key",
+    "type": "string",
+    "description": "path to the state file in the bucket\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "backend.s3.region",
+    "type": "string",
+    "description": "region of the bucket\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "data",
+    "type": "",
+    "description": "Data objects, are queries to use resources which\nare already exist, as if they are created by a the resource\noption.\nSee for more details : https://www.terraform.io/docs/configuration/data-sources.html\n",
+    "example": "{}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "locals",
+    "type": "",
+    "description": "Define terraform variables with file scope.\nLike modules this is terraform intern and terranix has better ways.\nSee for more details : https://www.terraform.io/docs/configuration/locals.html\n",
+    "example": "{\"locals\":{\"owner\":\"Community Team\",\"service_name\":\"forum\"}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "module",
+    "type": "",
+    "description": "A terraform module, to define multiple resources,\nfor sharing or duplication.\nThe terraform module system, and has nothing to\ndo with the module system of terranix or nixos.\nSee for more details : https://www.terraform.io/docs/configuration/modules.html\n",
+    "example": "{\"module\":{\"consul\":{\"source\":\"github.com/hashicorp/example\"}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "output",
+    "type": "",
+    "description": "Useful in combination with terraform_remote_state.\nSee for more details : https://www.terraform.io/docs/configuration/outputs.html\n",
+    "example": "{\"output\":{\"instance_ip_addr\":{\"value\":\"aws_instance.server.private_ip\"}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "provider",
+    "type": "",
+    "description": "Define you API connection.\nDon't use secrets in here, they will be visible in the nix-store and the resulting\nconfig.tf.json. Instead use terraform variables.\nSee for more details : https://www.terraform.io/docs/configuration/providers.html\nor https://www.terraform.io/docs/providers/index.html\n",
+    "example": "{\"provider\":{\"google\":{\"project\":\"acme-app\",\"region\":\"us-central1\"}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "provisioner.privateKeyFile",
+    "type": "string",
+    "description": "PrivateKey for provisioning via ssh access\nsee https://www.terraform.io/docs/provisioners/connection.html\n\nThis is an agnostic option, option-authors should use this options\nto implement server provisioning.\n",
+    "example": "\"~/.ssh/id_rsa\"",
+    "default": "null",
+    "defined": "modules/provisioner.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/provisioner.nix"
+  },
+  {
+    "label": "remote_state.etcd",
+    "type": "attribute set of submodules",
+    "description": "etcd remote state\nhttps://www.terraform.io/docs/backends/types/etcd.html\n",
+    "example": "null",
+    "default": "{}",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.etcd.<name>.endpoints",
+    "type": "string",
+    "description": "A space-separated list of the etcd endpoints\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.etcd.<name>.password",
+    "type": "null or string",
+    "description": "the password\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.etcd.<name>.path",
+    "type": "string",
+    "description": "The path where to store the state\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.etcd.<name>.username",
+    "type": "null or string",
+    "description": "the username\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.local",
+    "type": "attribute set of submodules",
+    "description": "local remote state\nhttps://www.terraform.io/docs/backends/types/local.html\n",
+    "example": "null",
+    "default": "{}",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.local.<name>.path",
+    "type": "string",
+    "description": "path to the state file\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.s3",
+    "type": "attribute set of submodules",
+    "description": "s3 remote state\nhttps://www.terraform.io/docs/backends/types/s3.html\n",
+    "example": "null",
+    "default": "{}",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.s3.<name>.bucket",
+    "type": "string",
+    "description": "bucket name\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.s3.<name>.key",
+    "type": "string",
+    "description": "path to the state file in the bucket\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "remote_state.s3.<name>.region",
+    "type": "string",
+    "description": "region of the bucket\n",
+    "example": "null",
+    "default": "null",
+    "defined": "modules/terraform/backends.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/terraform/backends.nix"
+  },
+  {
+    "label": "resource",
+    "type": "",
+    "description": "The backbone of terraform and terranix to change and create state.\nSee for more details : https://www.terraform.io/docs/configuration/resources.html\n",
+    "example": "{\"resource\":{\"aws_instance\":{\"web\":{\"ami\":\"ami-a1b2c3d4\",\"instance_type\":\"t2.micro\"}}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "terraform",
+    "type": "",
+    "description": "Terraform configuration.\nBut for backends have a look at the terranix options\nbackend.etcd, backend.local and backend.s3.\nSee for more details : https://www.terraform.io/docs/configuration/terraform.html\n",
+    "example": "{\"terraform\":{\"backend\":{\"s3\":{\"bucket\":\"mybucket\",\"key\":\"path/to/my/key\",\"region\":\"us-east-1\"}}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  },
+  {
+    "label": "users",
+    "type": "attribute set of attribute set of submoduless",
+    "description": "User management. `users.group.username` is the path.\nAll members in the `admins` group should be able to ssh to servers.\n\nThis is an agnostic option, option-authors should use this options\nto implement server provisioning.\n",
+    "example": "{\"admins\":{\"lassuls\":{\"publicKey\":\"ssh-rsa ABKAB3NzaC1yc2EAAAA..\"},\"mrVanDalo\":{\"publicKey\":\"ssh-rsa AAAAB3NzaC1yc2EAAAA..\"}}}",
+    "default": "{}",
+    "defined": "modules/users.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/users.nix"
+  },
+  {
+    "label": "users.<name>.<name>.publicKey",
+    "type": "null or string",
+    "description": "ssh public key of user\n",
+    "example": "\"${ file( ~/.ssh/id_rsa.pub ) }\"",
+    "default": "null",
+    "defined": "modules/users.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/modules/users.nix"
+  },
+  {
+    "label": "variable",
+    "type": "",
+    "description": "Input Variables, which can be set by `--var=name` or by environment variables prefixt with `TF_VAR_`.\nUsually used in terraform modules or to ask for API tokens.\nSee for more details : https://www.terraform.io/docs/configuration/variables.html\n",
+    "example": "{\"variable\":{\"image_id\":{\"description\":\"The id of the machine image (AMI) to use for the server.\",\"type\":\"string\"}}}",
+    "default": "{}",
+    "defined": "core/terraform-options.nix",
+    "url": "https://github.com/terranix/terranix/tree/master/core/terraform-options.nix"
+  }
+]

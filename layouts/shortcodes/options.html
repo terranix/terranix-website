@@ -1,0 +1,14 @@
+<ul>
+{{ range (.Page.Resources.GetMatch "options.json" | unmarshal )}}
+    <li>
+        <b><u>{{ .label }}</u></b><br>
+        {{ .description }}<br>
+        {{ if (ne .type "") }}<b>type :</b> {{ .type }}<br>{{ end }}
+        {{ if (and (ne .default "null") (ne .default "{}" ))}}<b>default : </b> <code>{{ .default }}</code><br>{{ end }}
+        <b>defined : </b> <a href="{{ .url }}">{{ .defined }}</a><br>
+        {{ if (and (ne .example "null") (ne .example "{}" ))}} <b>example : </b> <code>{{ .example }}</code><br>
+        {{ end }}
+    </li>
+
+{{ end }}
+</ul>

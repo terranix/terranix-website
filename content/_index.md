@@ -7,7 +7,7 @@ feature:
   - documentation/terranix-vs-hcl.md
 ---
 
-A NixOS way to create
+A [NixOS](https://nixos.org) way to create
 [terraform json](https://www.terraform.io/docs/configuration/syntax-json.html)
 files.
 

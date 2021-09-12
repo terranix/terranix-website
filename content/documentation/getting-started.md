@@ -35,7 +35,7 @@ let
   hcloud_api_token = "`${pkgs.pass}/bin/pass development/hetzner.com/api-token`";
 
   terranix = pkgs.callPackage (pkgs.fetchgit {
-    url = "https://github.com/mrVanDalo/terranix.git";
+    url = "https://github.com/terranix/terranix.git";
     rev = "2.3.0";
     sha256 = "030067h3gjc02llaa7rx5iml0ikvw6szadm0nrss2sqzshsfimm4";
   }) { };
