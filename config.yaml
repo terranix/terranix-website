@@ -1,0 +1,53 @@
+baseURL: "http://tech.ingolf-wagner.de"
+languageCode: "en-us"
+title: "Techblog - Ingolf Wagner"
+pygmentsUseClasses: true
+sectionPagesMenu: "main"
+
+params:
+  showAllPages: false
+  featured:
+    - /nixos/krops/
+    - /art/graffiti-wallpapers/
+    - /nixos/nix-instantiate/
+  mainSections:
+    - nixos
+
+markup:
+  tableOfContents:
+    endLevel: 6
+    startLevel: 2
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: solarized-light
+    tabWidth: 2
+
+menu:
+  main:
+    - name: "main"
+      url: "/"
+      weight: 1
+      identifier: "main"
+
+    - name:  "documentation"
+      url: "/documentation/"
+      identifier: "documentation"
+      weight: 2
+      title: RTF(riendly)M
+
+    - name:  "Options"
+      url: "/options"
+      identifier: "options"
+      weight: 3
+      title: optinonated terranix modules

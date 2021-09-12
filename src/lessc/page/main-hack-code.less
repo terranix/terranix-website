@@ -1,0 +1,42 @@
+ pre {
+   text-align: left;
+   margin-left: 0;
+   margin-right: 0;
+
+   padding-left: .5em;
+   padding-top: .7em  ;
+   padding-right: .0;
+   padding-bottom: 0.7em;
+
+   border-left: 1px solid @color-code-border;
+   border-right: 1px solid @color-code-border;
+   border-top: 1px solid @color-code-border;
+   border-bottom: 1px solid @color-code-border;
+   white-space: pre-wrap;
+
+   font-weight: normal;
+   font-family: @font-code;
+
+   code {
+     font-weight: normal;
+     font-family: @font-code;
+     line-height: 1.1em;
+   }
+ }
+
+// inline code
+ .inline-code{
+   font-size: 1rem;
+   color: @color-code-inline;
+
+   font-weight: bold;
+   font-family: @font-code;
+ }
+
+ p > code {
+   .inline-code();
+ }
+
+ li > code {
+   .inline-code();
+ }

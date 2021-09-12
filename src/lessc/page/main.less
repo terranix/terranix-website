@@ -1,0 +1,99 @@
+@import "color.less";
+@import "media-types.less";
+@import "font.less";
+
+@import "main-navigation.less";
+@import "main-hack.less";
+@import "main-toc.less";
+@import "main-hack-flex-listing.less";
+@import "chroma-highlighting-syntax.less";
+
+@import "custom-iphone.less";
+@import "github-octo.less";
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: @font-normal;
+  font-style: normal;
+
+  line-height: 1.5em;
+  @media @desktop{
+    font-size: 16px;
+  }
+  font-size: 14px;
+  background-color: @color-body-background;
+  color: @color-body-font;
+}
+
+
+body {
+  padding-bottom: 3em;
+
+  header {
+    width: 100%;
+    @media @desktop {
+      width: 800px;
+    };
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content {
+    @media @desktop {
+      width: 800px;
+    };
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-big {
+    @media @desktop {
+      width: 1000px;
+    };
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+h1, h2, h3, h4 {
+  font-family: @font-header;
+}
+
+.publishing_date {
+  font-family: @font-publishing-date;
+  font-size: 0.8rem;
+  color: @color-publishing-date;
+}
+
+
+table.comparison {
+  width: 100%;
+
+  margin-left: 0;
+  margin-right: 0;
+
+  .good {
+    background: @color-comparison-good;
+    text-align: center;
+  }
+
+  .bad {
+    background: @color-comparison-bad;
+    text-align: center;
+  }
+
+  .ok {
+    background: @color-comparison-ok;
+    text-align: center;
+  }
+}
+
+figure {
+  widows: 98%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}

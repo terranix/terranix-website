@@ -1,0 +1,7 @@
+<div class="card">
+{{ with .Get "header" }}<div class="card-header">{{ . }}</div>{{ end }}
+<div class="card-body">
+{{ with .Get "text" }}<p>{{ . }}<p>{{ end }}
+{{ .Inner }}
+</div>
+</div>

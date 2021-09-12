@@ -1,0 +1,70 @@
+.content, .content-big {
+  &> .card {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+blockquote{
+  font-size: 1rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 2px solid @color-card-border;
+}
+
+// cards
+.card {
+
+  padding:0;
+  margin:0;
+  text-align: center;
+
+  &.color-green {
+    .card-header {
+      border-top: 2px solid @color-card-border-green;
+      border-left: 2px solid @color-card-border-green;
+      border-right: 2px solid @color-card-border-green;
+    }
+    .card-body {
+      border: 2px solid @color-card-border-green;
+    }
+  }
+
+  &.color-red{
+    .card-header {
+      border-top: 2px solid @color-card-border-red;
+      border-left: 2px solid @color-card-border-red;
+      border-right: 2px solid @color-card-border-red;
+    }
+    .card-body {
+      border: 2px solid @color-card-border-red;
+    }
+  }
+
+
+  .card-header {
+    text-align: center;
+
+    padding-bottom: @standard-margin;
+    padding-top: @standard-margin;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+
+    border-top: 2px solid @color-card-border;
+    border-left: 2px solid @color-card-border;
+    border-right: 2px solid @color-card-border;
+  }
+
+  .card-body{
+    text-align: center;
+
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+
+    border: 2px solid @color-card-border;
+  }
+}

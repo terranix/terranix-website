@@ -1,0 +1,38 @@
+
+.flexbox {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  align-items: stretch;
+
+  .flexitem{
+    flex-grow: 1;
+    align-self: stretch;
+  }
+
+  &.box-size-half {
+    .flexitem {
+      @media @desktop {
+        -ms-flex: 1 0 45%;
+        flex: 1 0 45%
+      }
+      -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+    }
+  }
+
+  &.box-size-third {
+    .flexitem {
+      @media @desktop {
+        -ms-flex: 1 0 30%;
+        flex: 1 0 30%
+      }
+      -ms-flex: 1 0 100%;
+      flex: 1 0 100%;
+    }
+  }
+
+}

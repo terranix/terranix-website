@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="content">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <div class="flexbox listings">
+        {{ range .Pages.ByParam "order" }}
+        <a href="{{.RelPermalink}}" class="flexitem card" >
+            <div class="card-header" style="">
+                {{ .Title }}
+            </div>
+            <div class="card-body" style="">
+                <p>
+                    {{ .Param "summary" }}
+                </p>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

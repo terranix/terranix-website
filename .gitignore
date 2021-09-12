@@ -1,0 +1,6 @@
+public
+*.swp
+*.css
+static/nixos/tinc/*.png
+static/nixos/tinc/*.svg
+resources/_gen
