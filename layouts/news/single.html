@@ -1,0 +1,28 @@
+{{ define "main" }}
+<!--  {{ .TableOfContents }}-->
+<div class="content">
+    <h1>{{ .Title }}</h1>
+    <div class="publishing_date">{{ .Date | time.Format "January 2006" }}</div>
+    {{ .Content }}
+
+    {{ if .Param "feature" }}
+    <h2>{{ .Param "feature-header" | default "See also" }}</h2>
+    <div class="flexbox listings">
+        {{ range .Param "feature" }}
+        {{ $page := site.GetPage . }}
+        <a href="{{$page.RelPermalink}}" class="flexitem card" >
+            <div class="card-header" style="">
+                {{ $page.Title }}
+            </div>
+            <div class="card-body" style="">
+                <p>
+                    {{ $page.Param "summary" }}
+                </p>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+</div>
+{{ end }}
