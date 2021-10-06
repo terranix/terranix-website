@@ -6,11 +6,6 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     hugo
 
-    blockdiag
-    nwdiag
-    seqdiag
-    actdiag
-
     lessc
 
     rake

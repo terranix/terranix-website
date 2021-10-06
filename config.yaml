@@ -31,14 +31,19 @@ menu:
       weight: 1
       identifier: "main"
 
+    - name: "news"
+      url: "/news"
+      weight: 2
+      identifier: "news"
+
     - name:  "documentation"
       url: "/documentation/"
       identifier: "documentation"
-      weight: 2
+      weight: 3
       title: RTF(riendly)M
 
     - name:  "options"
       url: "/options"
       identifier: "options"
-      weight: 3
+      weight: 4
       title: optinonated terranix modules
