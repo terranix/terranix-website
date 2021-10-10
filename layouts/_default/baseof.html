@@ -2,7 +2,8 @@
 <head>
     <title> {{ .Title }} </title>
     {{/* needed for responsive design */}}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, minimum-scale=1">
     <meta charset="UTF-8">
     <meta name="author" content="Ingolf Wagner">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Abel|Inconsolata|Lato|Zilla+Slab" rel="stylesheet">
@@ -19,21 +20,29 @@
 <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
 
-<nav id="main-navigation">
-    <ul id="patterns-list">
-        {{ $current := . }}
-        {{ range .Site.Menus.main }}
-        {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
-        <li {{if $active}}class="active" {{end}}>
-            <a href="{{ .URL }}" title="{{ .Title }}"> {{ .Name }} </a>
-        </li>
-        {{ end }}
-    </ul>
-</nav>
+
+
+<div class="main">
+
+    <nav class="main-navigation">
+        <ul id="patterns-list">
+            {{ $current := . }}
+            {{ range .Site.Menus.main }}
+            {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+            <li {{if $active}}class="active" {{end}}>
+                <a href="{{ .URL }}" title="{{ .Title }}"> {{ .Name }} </a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+
+{{ block "side" . }}
+{{ end }}
 
 {{ block "main" . }}
 empty
 {{ end }}
+</div>
 
 </body>
 

@@ -23,7 +23,7 @@ If you don't know what [NixOS](https://nixos.org) or
 {{% /note %}}
 
 
-## How to Setup
+## How to Set up
 
 A convenient way is to create a shell.nix
 which holds you terranix and terraform setup.
@@ -31,22 +31,15 @@ which holds you terranix and terraform setup.
 ```nix
 { pkgs ? import <nixpkgs> { } }:
 let
-
   hcloud_api_token = "`${pkgs.pass}/bin/pass development/hetzner.com/api-token`";
-
-  terranix = pkgs.callPackage (pkgs.fetchgit {
-    url = "https://github.com/terranix/terranix.git";
-    rev = "2.3.0";
-    sha256 = "030067h3gjc02llaa7rx5iml0ikvw6szadm0nrss2sqzshsfimm4";
-  }) { };
-
+  
   terraform = pkgs.writers.writeBashBin "terraform" ''
     export TF_VAR_hcloud_api_token=${hcloud_api_token}
-    ${pkgs.terraform_0_12}/bin/terraform "$@"
+    ${pkgs.terraform_0_15}/bin/terraform "$@"
   '';
 
 in pkgs.mkShell {
-  buildInputs = [ terranix terraform ];
+  buildInputs = [ pkgs.terranix terraform ];
 }
 ```
 

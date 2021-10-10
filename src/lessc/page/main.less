@@ -3,6 +3,7 @@
 @import "font.less";
 
 @import "main-navigation.less";
+@import "main-sidenav.less";
 @import "main-hack.less";
 @import "main-toc.less";
 @import "main-hack-flex-listing.less";
@@ -22,28 +23,45 @@ html {
   font-size: 14px;
   background-color: @color-body-background;
   color: @color-body-font;
+
+  overflow-y: scroll;
 }
 
 
 body {
   padding-bottom: 3em;
 
-  header {
-    width: 100%;
-    @media @desktop {
-      width: 800px;
-    };
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .main {
+    display: grid;
+    grid-template-rows: auto;
 
-  .content {
-    @media @desktop {
-      width: 800px;
-    };
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    @media @desktop{
+      grid-template-columns: 1fr 800px 1fr;
+      grid-template-areas:
+            ". header . "
+            "sidenav content .";
+    }
+    grid-template-columns: auto;
+    grid-template-areas:
+            "header"
+            "content";
+
+    .main-navigation {
+      grid-area: header;
+    }
+
+    .content {
+      grid-area: content;
+    }
+
+    #sidenav {
+      display: none;
+      @media @desktop{
+        display: initial;
+        grid-area: sidenav;
+      }
+    }
+
   }
 
   .content-big {

@@ -1,0 +1,60 @@
+#sidenav {
+
+  ul {
+
+
+    list-style-type: none;
+    font-size: 0.9rem;
+
+    padding-top: 0.5rem;
+    padding-right: 0.7em;
+    padding-left: 0.8em;
+    padding-bottom: 0;
+
+    li {
+
+
+
+      margin: 0;
+      padding: 0;
+
+
+      line-height: 1.1em;
+
+      &:after {
+        content: "";
+      }
+
+      &.active {
+        background-color: @color-body-background;
+        color: @color-link-font;
+      }
+
+      a {
+
+        &:hover {
+          background-color: @color-body-background;
+          color: @color-link-font;
+        }
+
+        // text
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        color: @color-body-font;
+
+        border-bottom: 0 solid @color-nav-underline;
+        border-top: 0 solid @color-nav-underline;
+
+        //padding-bottom: 0.6em; // space to the underscore
+        //padding-top: 0.6em; // space to the underscore
+
+        padding: 0.5em;
+        margin: 0.5em;
+        background-color: @gb-lm-bg0;
+        border: 1px solid @gb-lm-bg1;
+
+      }
+    }
+  }
+}
