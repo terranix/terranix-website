@@ -83,9 +83,8 @@ resoure.hcloud_server.myotherotherotherserver = {
 };
 ```
 
-> The difference is that terranix and terraform references are evaluated differently.
-terranix references are evaluated when generating the json file, and terraform references are calculated
-during the process.
+> terranix references being evaluated when generating the json file.
+> terraform references being calculated when running terraform.
 
 ## multi line sings
 
