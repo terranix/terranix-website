@@ -1,6 +1,6 @@
 ---
 title: Resources
-order: 11
+order: 100
 summary: List of Documentation and Code related to terranix
 letter: r
 ---

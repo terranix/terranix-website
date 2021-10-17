@@ -1,6 +1,6 @@
 ---
 title: Modules
-order: 3
+order: 80
 letter: m
 summary: |
     The NixOS module system the real power behind terranix.

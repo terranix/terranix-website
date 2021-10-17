@@ -1,6 +1,6 @@
 ---
 title: Functions
-order: 10
+order: 40
 summary: Some terranix functions which are useful including examples.
 letter: f
 feature:

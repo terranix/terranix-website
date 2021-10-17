@@ -39,7 +39,7 @@ body {
       grid-template-columns: 1fr 800px 1fr;
       grid-template-areas:
             ". header . "
-            "sidenav content .";
+            "sidenav content toc";
     }
     grid-template-columns: auto;
     grid-template-areas:
@@ -54,6 +54,21 @@ body {
       grid-area: content;
     }
 
+    #TableOfContents{
+      display: none;
+      @media @desktop{
+        display: initial;
+        grid-area: toc;
+        margin-top: 2em;
+      }
+      ul {
+        margin-top: .2em;
+        margin-bottom: .4em;
+        li {
+          margin-top: .2em;
+        }
+      }
+    }
     #sidenav {
       display: none;
       @media @desktop{

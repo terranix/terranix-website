@@ -1,6 +1,6 @@
 ---
 title: Differences between terranix and HCL
-order: 3
+order: 30
 summary: Syntax differences between terranix and HCL
 letter: t
 feature:

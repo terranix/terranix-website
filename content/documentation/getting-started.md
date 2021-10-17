@@ -1,7 +1,7 @@
 ---
 title: Getting Started
 draft: false
-order: 2
+order: 10
 summary: |
     You know nix and terraform and want to see how to terranix
     works? This the place to start.
