@@ -15,7 +15,7 @@ feature:
 Let's have a quick overview on how you would use terranix.
 
 If you search for working examples have a look at the
-[examples folder at github](https://github.com/terranix/terranix/tree/master/examples).
+[examples folder at github](https://github.com/terranix/terranix-examples).
 
 {{% note %}}
 If you don't know what [NixOS](https://nixos.org) or
