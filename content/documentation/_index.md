@@ -1,8 +1,10 @@
 ---
-title: Documentation
+title: documentation
 ---
 
-Terranix is mostly terraform written in nix.
+terranix is a json generator using Nix and NixOS modules
+intended to generate 
+[terraform json](https://www.terraform.io/docs/configuration/syntax-json.html).
 
 
 

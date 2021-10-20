@@ -1,5 +1,5 @@
 ---
-title: terranix.org
+title: terraform in nix
 feature-header: get started with
 feature:
   - documentation/what-is-terranix.md
