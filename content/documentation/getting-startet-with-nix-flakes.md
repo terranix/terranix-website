@@ -26,7 +26,7 @@ If you don't know what [NixOS](https://nixos.org) or
 
 nix flakes make dependency management of modules and packages much easier.
 
-### `flake.nix`
+## `flake.nix`
 
 First you need a `flake.nix`
 
@@ -90,12 +90,35 @@ This flake defines a bunch of things
 * A development shell (`nix develop`) containing `terraform` and `terranix` command line tools
 * Applications to apply (`nix ".#apply"`) and destroy (`nix ".#destroy"`) the defined configuration.
 
-### `config.nix`
+## `config.nix`
 
 The terranix configuration is placed in `config.nix` because we 
-import it using `terranix_config.import = [ ./config.nix ];`.
+import it using 
+```nix
+terranix_config.import = [ ./config.nix ];
+```
 You are able to import more than one file here,
 or even inline terranix code.
 This is usually the place to import external terranix modules which
 managed as flake input.
 
+## import terranix modules
+
+terranix modules should also be available via nix flakes using the outputs
+
+* `terranixModules.<name>`
+* `terranixModule` : should contain all `terranixModules` combined of the given flake.
+
+So they can be used like
+
+```nix
+inputs.github.url = "github:terranix/terranix-module-github";
+...
+terraformConfiguration = terranix.lib.buildTerranix {
+  inherit pkgs;
+  terranix_config.imports = [ 
+    github.terranixModule
+    ./config.nix 
+  ];
+};
+```
