@@ -47,9 +47,9 @@ First you need a `flake.nix`
         pkgs = nixpkgs.legacyPackages.${system};
         terraform = pkgs.terraform_0_15;
         
-        terraformConfiguration = terranix.lib.buildTerranix {
-          inherit pkgs;
-          terranix_config.imports = [ ./config.nix ];
+        terraformConfiguration = terranix.lib.terranixConfiguration {
+          inherit system;
+          modules = [ ./config.nix ];
         };
       in {
         defaultPackage = terraformConfiguration;
@@ -63,7 +63,7 @@ First you need a `flake.nix`
           type = "app";
           program = toString (pkgs.writers.writeBash "apply" ''
             if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
-            cp ${terraformConfiguration}/config.tf.json config.tf.json \
+            cp ${terraformConfiguration} config.tf.json \
               && ${terraform}/bin/terraform init \
               && ${terraform}/bin/terraform apply
           '');
@@ -73,7 +73,7 @@ First you need a `flake.nix`
           type = "app";
           program = toString (pkgs.writers.writeBash "destroy" ''
             if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
-            cp ${terraformConfiguration}/config.tf.json config.tf.json \
+            cp ${terraformConfiguration} config.tf.json \
               && ${terraform}/bin/terraform init \
               && ${terraform}/bin/terraform destroy
           '');
@@ -114,9 +114,9 @@ So they can be used like
 ```nix
 inputs.github.url = "github:terranix/terranix-module-github";
 ...
-terraformConfiguration = terranix.lib.buildTerranix {
-  inherit pkgs;
-  terranix_config.imports = [ 
+terraformConfiguration = terranix.lib.terranixConfiguration{
+  inherit system;
+  modules = [ 
     github.terranixModule
     ./config.nix 
   ];
