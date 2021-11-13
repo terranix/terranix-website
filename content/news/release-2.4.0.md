@@ -16,7 +16,7 @@ Thanks to
 [loafofpiecrust](https://github.com/loafofpiecrust)
 [Mic92](https://github.com/Mic92)
 [terlar](https://github.com/terlar)
-for you input and help on this release.
+for your input and help on this release.
 
 As special thanks to Jonathan who owned the 
 [terranix github account](https://github.com/terranix/)

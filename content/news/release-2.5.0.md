@@ -10,7 +10,7 @@ is released.
 Thanks to 
 [betaboon](https://github.com/betaboon)
 [KarolisL](https://github.com/KarolisL)
-for you input and help on this release.
+for your input and help on this release.
 
 ## Changelog
 
