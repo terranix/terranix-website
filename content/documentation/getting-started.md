@@ -14,7 +14,7 @@ feature:
 
 Let's have a quick overview on how you would use terranix.
 
-If you search for working examples have a look at the
+If you look for working examples check out
 [examples folder at github](https://github.com/terranix/terranix-examples).
 
 {{% note %}}
@@ -22,11 +22,10 @@ If you don't know what [NixOS](https://nixos.org) or
 [Terraform](https://terraform.io) is, have a look at [what terranix is]({{< relref "what-is-terranix.md" >}}).
 {{% /note %}}
 
+## shell.nix
 
-## How to Set up
-
-A convenient way is to create a shell.nix
-which holds you terranix and terraform setup.
+A convenient way is to create a `shell.nix`
+which holds your terranix and terraform setup.
 
 ```nix
 { pkgs ? import <nixpkgs> { } }:
@@ -43,9 +42,9 @@ in pkgs.mkShell {
 }
 ```
 
-### config.nix 
+## config.nix
 
-create a `config.nix` for example
+Create a `config.nix` for example
 
 ```nix
 { ... }:
@@ -65,19 +64,20 @@ create a `config.nix` for example
 }
 ```
 
-### Create a Server
+## Create a Server
 
-Next lets generate a json file in terraform json format
-and run terraform apply
+Next, lets generate the terraform configuration in json format
+and run `terraform apply`
 to let terraform do it's magic.
 
 ```shell
-terranix > config.tf.json && terraform init && terraform apply
+terranix config.nix > config.tf.json 
+terraform init && terraform apply
 ```
 
-### Destroy a Server
+## Destroy a Server
 
-cleaning everything up is the job of terraform, just run : 
+cleaning everything up is the job of terraform.
 
 ```shell
 terraform destroy
