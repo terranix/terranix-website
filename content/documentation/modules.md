@@ -94,19 +94,5 @@ config = mkAssert (cfg.parameter != "fail") "parameter is set to fail!" {
 
 ## provide terranix modules using nix flakes
 
-If you want to make your module accessible by nix flakes,
-please provide your modules using `terranixModules` **and** `terranixModule`.
-
-For example:
-```nix
-{
-  outputs = { self }: {
-    terranixModules.my-module = import ./modules/my-module.nix;
-    terranixModules.my-other-module = import ./modules/my-other-module.nix;
-    terranixModule.imports = [ 
-      self.terranixModules.my-module
-      self.terranixModules.my-other-module
-    ];
-  };
-}
-```
+Have a look at 
+[the flake documentation]({{< ref "flakes.md#writing-terranix-modules" >}})

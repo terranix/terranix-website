@@ -8,58 +8,58 @@ summary: |
 letter: g
 ---
 
-You can check out this example using the `teamplate` feature of nix flakes.
-```shell
-nix flake init --template github:terranix/terranix
+[nix flakes](https://nixos.wiki/wiki/Flakes)
+make dependency management of modules and packages much easier.
+
+Deeper look at terranix and nix flakes is done in the 
+[flake chapter]({{< ref "documentation/flakes.md" >}})
+
+## nix build
+
+
+Here is a minimal `flake.nix`
+```nix
+{
+  inputs.terranix.url = "github:terranix/terranix";
+  outputs = { terranix, ... }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      defaultPackage.${system} = terranix.lib.terranixConfiguration {
+        inherit system;
+        modules = [ ./config.nix ];
+      };
+    };
+}
 ```
-you get a list of all templates:
-```shell
-nix flake show github:terranix/terranix-examples
-```
 
-{{% note %}}
-If you don't know what [NixOS](https://nixos.org) or
-[Terraform](https://terraform.io) is, have a look at [what terranix is]({{< relref "what-is-terranix.md" >}}).
-{{% /note %}}
+You can run `nix build -o config.tf.json`, which should create a `config.tf.json`
+in your current folder.
+Now you are ready to run `terraform`.
 
-## How to set up
+## nix run
 
-nix flakes make dependency management of modules and packages much easier.
-
-## `flake.nix`
-
-First you need a `flake.nix`
+Of course, you can use `apps` to do everything at once.
 
 ```nix
 {
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
-    terranix = {
-      url = "github:terranix/terranix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = { self, nixpkgs, flake-utils, terranix }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        terraform = pkgs.terraform_0_15;
-        
-        terraformConfiguration = terranix.lib.terranixConfiguration {
-          inherit system;
-          modules = [ ./config.nix ];
-        };
-      in {
-        defaultPackage = terraformConfiguration;
-        # nix develop
-        devShell = pkgs.mkShell {
-          buildInputs =
-            [ pkgs.terraform_0_15 terranix.defaultPackage.${system} ];
-        };
-        # nix run ".#apply"
-        apps.apply = {
+  inputs.nixpkgs.url = "github:nixos/nixpkgs";
+  inputs.terranix.url = "github:terranix/terranix";
+  outputs = { self, nixpkgs, terranix, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      terraform = pkgs.terraform_0_15;
+      terraformConfiguration = terranix.lib.terranixConfiguration {
+        inherit system;
+        modules = [ ./config.nix ];
+      };
+    in
+    {
+      # nix run ".#apply"
+      apps.${system} = {
+        apply = {
           type = "app";
           program = toString (pkgs.writers.writeBash "apply" ''
             if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
@@ -69,7 +69,7 @@ First you need a `flake.nix`
           '');
         };
         # nix run ".#destroy"
-        apps.destroy = {
+        destroy = {
           type = "app";
           program = toString (pkgs.writers.writeBash "destroy" ''
             if [[ -e config.tf.json ]]; then rm -f config.tf.json; fi
@@ -78,47 +78,11 @@ First you need a `flake.nix`
               && ${terraform}/bin/terraform destroy
           '');
         };
-        # nix run
-        defaultApp = self.apps.${system}.apply;
-      });
+      };
+      # nix run
+      defaultApp.${system} = self.apps.${system}.apply;
+    };
 }
 ```
 
-This flake defines a bunch of things
-
-* A package (`nix build`) containing the rendered `config.tf.json`.
-* A development shell (`nix develop`) containing `terraform` and `terranix` command line tools
-* Applications to apply (`nix ".#apply"`) and destroy (`nix ".#destroy"`) the defined configuration.
-
-## `config.nix`
-
-The terranix configuration is placed in `config.nix` because we 
-import it using 
-```nix
-terranix_config.import = [ ./config.nix ];
-```
-You are able to import more than one file here,
-or even inline terranix code.
-This is usually the place to import external terranix modules which
-managed as flake input.
-
-## import terranix modules
-
-terranix modules should also be available via nix flakes using the outputs
-
-* `terranixModules.<name>`
-* `terranixModule` : should contain all `terranixModules` combined of the given flake.
-
-So they can be used like
-
-```nix
-inputs.github.url = "github:terranix/terranix-module-github";
-...
-terraformConfiguration = terranix.lib.terranixConfiguration{
-  inherit system;
-  modules = [ 
-    github.terranixModule
-    ./config.nix 
-  ];
-};
-```
+This provides you with the commands `nix run`, `nix run ".#apply"` and `nix run ".#destroy"`.
