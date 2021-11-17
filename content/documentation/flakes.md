@@ -100,7 +100,7 @@ For example you can pull the options.json of the
    jq  -s '{ options: . }'
 ```
 
-## Using terranixConfigurationAst or terranixConfigurationAst
+## Using terranixConfigurationAst or terranixOptionsAst
 
 If you want to get deeper insides in the output of `terranixConfiguration` or `terranixOptions`
 you can make use of the `terranixConfigurationAst` or the `terranixOptionsAst` function.
