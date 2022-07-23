@@ -16,27 +16,34 @@
         };
 
         # nix run
-        defaultApp = self.apps.${system}.server;
+        apps.default = self.apps.${system}.server;
 
         # nix run ".#server"
-        apps.server = pkgs.writers.writeBashBin "server" ''
-          set -e
-          set -o pipefail
-          PATH=${
-            pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo ]
-          }
-          rake run_server
-        '';
+        apps.server = {
+          type = "app";
+          program = toString (pkgs.writers.writeBash "server" ''
+            set -e
+            set -o pipefail
+            PATH=${
+              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo ]
+            }
+            rake run_server
+          '');
+        };
 
         # nix run ".#publish"
-        apps.publish = pkgs.writers.writeBashBin "publish" ''
-          set -e
-          set -o pipefail
-          PATH=${
-            pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo pkgs.rsync pkgs.openssh ]
-          }
-          rake publish
-        '';
+        apps.publish = {
+          type = "app";
+          program = toString (pkgs.writers.writeBash "publish" ''
+            set -e
+            set -o pipefail
+            PATH=${
+              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo pkgs.rsync pkgs.openssh ]
+            }
+            rake publish
+          ''
+          );
+        };
 
       }));
 }

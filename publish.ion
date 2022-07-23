@@ -2,7 +2,7 @@
 
 set -e
 
-let server      = sputnik.private
+let server      = robi.private
 let server_path = /srv/www/terranix
 let syncfolder  = sync
 
