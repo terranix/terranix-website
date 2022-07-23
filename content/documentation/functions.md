@@ -18,7 +18,7 @@ the variable `bastionHostEnable` is set to true.
 
 This is just an example for illustration, such things
 are better solved using
-[modules](/modules/).
+[modules]({{< ref "modules.md" >}}).
 
 ```nix
 { lib, ... }:
