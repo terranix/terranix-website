@@ -25,9 +25,9 @@
             set -e
             set -o pipefail
             PATH=${
-              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo ]
+              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.go-task pkgs.ion pkgs.hugo ]
             }
-            rake run_server
+            task server
           '');
         };
 
@@ -38,9 +38,9 @@
             set -e
             set -o pipefail
             PATH=${
-              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.rake pkgs.ion pkgs.hugo pkgs.rsync pkgs.openssh ]
+              pkgs.lib.makeBinPath [ pkgs.lessc pkgs.go-task pkgs.ion pkgs.hugo pkgs.rsync pkgs.openssh ]
             }
-            rake publish
+            task publish
           ''
           );
         };
