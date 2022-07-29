@@ -1,0 +1,36 @@
+version: '3'
+
+vars:
+  SERVER: robi.private
+  SERVER_PATH: /srv/www/terranix
+
+tasks:
+  server:
+    deps: [assets]
+    cmds: ["hugo serve"]
+
+  build:
+    deps: [assets]
+    cmds: ["hugo"]
+
+  assets:
+    deps: [css]
+
+  css:
+    cmds:
+      - lessc src/lessc/page/main.less static/css/main.css
+
+  publish:
+    deps: [assets, build]
+    cmds:
+      - |
+        rsync \
+        --recursive \
+        --compress \
+        --checksum \
+        --verbose \
+        --human-readable \
+        --partial --progress \
+        --protect-args \
+        --delete-after \
+        public/ {{.SERVER}}:{{.SERVER_PATH}}/

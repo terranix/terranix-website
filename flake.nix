@@ -12,7 +12,7 @@
 
         # nix develop
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ hugo lessc rake feh ion inotify-tools ];
+          buildInputs = with pkgs; [ hugo lessc rake go-task feh ion inotify-tools ];
         };
 
         # nix run

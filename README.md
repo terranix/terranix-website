@@ -1,10 +1,9 @@
 [terranix.org](https://terranix.org) source code
 
 ```
-rake run_server
-rake publish
+task server  # start local server
+task publish # publish code
 ```
-
 
 ## generate content/options/<module>/options.json
 
