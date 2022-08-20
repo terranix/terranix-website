@@ -10,7 +10,7 @@ feature:
 ---
 
 **HCL** is the language of terraform.
-It is has it's flaws, this is why terranix was born.
+It has its flaws, this is why terranix was born.
 
 ## declarations
 
