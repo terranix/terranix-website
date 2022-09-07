@@ -1,7 +1,7 @@
 ---
 title: 2.5.4 release
 date: 2022-07-11
-summary: version 2.5.3 follow new flake defaults
+summary: follow new flake defaults
 ---
 
 Version [2.5.4](https://github.com/terranix/terranix/releases/tag/2.5.4)
