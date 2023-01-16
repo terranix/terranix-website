@@ -86,11 +86,11 @@ resoure.hcloud_server.myotherotherotherserver = {
 > terranix references being evaluated when generating the json file.
 > terraform references being calculated when running terraform.
 
-## multi line sings
+## multi line strings
 
 In terraform you can create
 [multi line strings](https://www.terraform.io/docs/configuration/expressions.html#string-literals)
-using the `herdoc` style
+using the [`heredoc`](https://en.wikipedia.org/wiki/Here_document) style.
 
 ```hcl
 variable "multiline" {
