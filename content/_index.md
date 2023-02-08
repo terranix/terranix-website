@@ -1,6 +1,6 @@
 ---
 title: terraform in nix
-feature-header: get started with
+feature-header: Get started with
 feature:
   - documentation/what-is-terranix.md
   - documentation/getting-started.md
@@ -20,3 +20,9 @@ files.
 * The full power of the module system of NixOS
 * The full power of all the tooling in `pkgs` of NixOS (fetchgit,fetchurl,writers, ...)
 * Documentation generation from `config.nix` as json or man page.
+
+## Community
+
+- Join via matrix at `#terranix:terranix.org`.
+- Write issues on [github](https://github.com/terranix/terranix/issues)
+- Create pull requests on [github](https://github.com/terranix/terranix/pulls)
