@@ -52,9 +52,7 @@ resoure.hcloud_server.myserver = {
 };
 ```
 
-You can reference parameters the terraform way,
-because they are 
-[resource outputs](https://www.terraform.io/docs/providers/hcloud/r/server.html):
+You can reference parameters the terraform way.
 
 ```nix
 resoure.hcloud_server.myotherserver = {
@@ -64,9 +62,11 @@ resoure.hcloud_server.myotherserver = {
 };
 ```
 
+
 Or the terranix way:
 
 ```nix
+{ config, ... }:
 resoure.hcloud_server.myotherotherserver = {
   name = "node3";
   image = config.resource.hcloud_server.myserver.image;
@@ -77,6 +77,7 @@ resoure.hcloud_server.myotherotherserver = {
 Or the terranix pro way:
 
 ```nix
+{ config, ... }:
 resoure.hcloud_server.myotherotherotherserver = {
   name = "node4";
   inherit (config.resource.hlcoud_server) image server_type;
@@ -128,6 +129,14 @@ For example :
 ```nix
 variable.hcloud_token = {};
 provider.hcloud.token = "\${ var.hcloud_token }";
+```
+
+You can avoid escaping `$` with the `tfRef` function:
+
+```nix
+{ lib, ... }:
+variable.hcloud_token = {};
+provider.hcloud.token = lib.tfRef "var.hcloud_token";
 ```
 
 ### escaping in multi line strings
