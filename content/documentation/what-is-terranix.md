@@ -33,6 +33,18 @@ Providers are the **thing** that enables terraform to talk to APIs.
 A huge list of providers is available on
 [the Terraform website](https://www.terraform.io/docs/providers/index.html).
 
+#### Definition of multiple identical providers
+
+Here is an example of how you would [define multiple providers of the same kind](https://www.terraform.io/language/syntax/json#provider-blocks)
+```nix
+provider.aws = [{
+  region = "us-east-1";
+} {
+  alias = "eu";
+  region = "eu-central-1";
+}];
+```
+
 ### What is Terraform State?
 
 Terraform is not capable of seeing the state behind APIs,
