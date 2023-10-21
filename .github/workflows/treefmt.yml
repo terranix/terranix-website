@@ -9,4 +9,13 @@ jobs:
       with:
         nix_path: nixpkgs=channel:nixos-unstable
     - name: treefmt
-      run: nix-shell --run "treefmt --fail-on-change --no-cache"
+      run: nix-shell \
+        --package treefmt \
+        --package nixpkgs-fmt \
+        --package shfmt \
+        --package shellcheck \
+        --package black \
+        --package nodePackages.prettier \
+        --package codespell \
+        --command "treefmt --fail-on-change --no-cache"
+        
