@@ -8,11 +8,37 @@
   outputs = { self, nixpkgs, flake-utils, terranix-examples }:
     (flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
-      in {
+      in
+      {
 
         # nix develop
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ hugo lessc rake go-task feh ion inotify-tools ];
+          buildInputs = with pkgs; [
+            hugo
+            lessc
+            rake
+            go-task
+            feh
+            ion
+            inotify-tools
+            treefmt
+            nixpkgs-fmt
+            shfmt
+            black
+            nodePackages.prettier
+          ];
+        };
+
+        # nix build
+        packages.default = pkgs.stdenv.mkDerivation {
+          name = "terranix-website";
+
+          src = self;
+          nativeBuildInputs = [ pkgs.lessc pkgs.go-task pkgs.ion pkgs.hugo ];
+
+          configurePhase = "substituteInPlace config.yaml --replace 'http://terranix.org' 'https://terranix.github.io/terranix-website/'";
+          buildPhase = "task build";
+          installPhase = "cp -r public $out";
         };
 
         # nix run
