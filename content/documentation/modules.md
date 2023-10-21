@@ -3,10 +3,10 @@ title: Modules
 order: 80
 letter: m
 summary: |
-    The NixOS module system the real power behind terranix.
+  The NixOS module system the real power behind terranix.
 feature:
-- /documentation/functions.md
-- /documentation/terranix-vs-hcl.md
+  - /documentation/functions.md
+  - /documentation/terranix-vs-hcl.md
 ---
 
 The real power behind NixOS and terranix,
@@ -94,5 +94,5 @@ config = mkAssert (cfg.parameter != "fail") "parameter is set to fail!" {
 
 ## provide terranix modules using nix flakes
 
-Have a look at 
+Have a look at
 [the flake documentation]({{< ref "flakes.md#writing-terranix-modules" >}})

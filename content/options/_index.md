@@ -3,7 +3,7 @@ title: Options
 ---
 
 You can get documentation about all reachable
-options in your `config.nix` by using 
+options in your `config.nix` by using
 
 ```
 terranix-doc-man ./config.nix

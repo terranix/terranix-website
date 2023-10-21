@@ -7,7 +7,7 @@ summary: follow new flake defaults
 Version [2.5.4](https://github.com/terranix/terranix/releases/tag/2.5.4)
 is released.
 
-Thanks to 
+Thanks to
 [Mic92](https://github.com/Mic92)
 for your input on this release.
 

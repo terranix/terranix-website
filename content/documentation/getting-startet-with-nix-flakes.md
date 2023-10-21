@@ -3,21 +3,21 @@ title: Getting Started with nix flake
 draft: false
 order: 11
 summary: |
-    You know nix flakes and terraform and want to see how to terranix
-    works with nix flakes? This the place to start.
+  You know nix flakes and terraform and want to see how to terranix
+  works with nix flakes? This the place to start.
 letter: g
 ---
 
 [nix flakes](https://nixos.wiki/wiki/Flakes)
 make dependency management of modules and packages much easier.
 
-Deeper look at terranix and nix flakes is done in the 
+Deeper look at terranix and nix flakes is done in the
 [flake chapter]({{< ref "documentation/flakes.md" >}})
 
 ## nix build
 
-
 Here is a minimal `flake.nix`
+
 ```nix
 {
   inputs.terranix.url = "github:terranix/terranix";

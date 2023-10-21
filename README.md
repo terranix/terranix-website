@@ -15,4 +15,3 @@ terranix-doc-json \
 ```
 
 `--path` is to shorten the url, just run without it, and you'll see.
-

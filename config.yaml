@@ -36,13 +36,13 @@ menu:
       weight: 2
       identifier: "news"
 
-    - name:  "documentation"
+    - name: "documentation"
       url: "/documentation/"
       identifier: "documentation"
       weight: 3
       title: RTF(riendly)M
 
-    - name:  "options"
+    - name: "options"
       url: "/options"
       identifier: "options"
       weight: 4
