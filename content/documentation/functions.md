@@ -13,7 +13,7 @@ Here are some Functions which are useful.
 ## optionalAttrs
 
 Useful to create a resource depending on a condition.
-The following example adds a bation host only if
+The following example adds a bastion host only if
 the variable `bastionHostEnable` is set to true.
 
 This is just an example for illustration, such things

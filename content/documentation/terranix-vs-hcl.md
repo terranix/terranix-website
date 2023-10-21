@@ -45,7 +45,7 @@ But in terranix, because it is nix, you can basically reference everything.
 
 For example if you have a resource and you want to reuse its parameters:
 ```nix
-resoure.hcloud_server.myserver = {
+resource.hcloud_server.myserver = {
   name = "node1";
   image = "debian-9";
   server_type = "cx11";
@@ -55,7 +55,7 @@ resoure.hcloud_server.myserver = {
 You can reference parameters the terraform way.
 
 ```nix
-resoure.hcloud_server.myotherserver = {
+resource.hcloud_server.myotherserver = {
   name = "node2";
   image = "\${ hcloud_server.myserver.image }";
   server_type = "\${ hcloud_server.myserver.server_type }";
@@ -67,7 +67,7 @@ Or the terranix way:
 
 ```nix
 { config, ... }:
-resoure.hcloud_server.myotherotherserver = {
+resource.hcloud_server.myotherotherserver = {
   name = "node3";
   image = config.resource.hcloud_server.myserver.image;
   server_type = config.resource.hcloud_server.myserver.server_type;
@@ -78,7 +78,7 @@ Or the terranix pro way:
 
 ```nix
 { config, ... }:
-resoure.hcloud_server.myotherotherotherserver = {
+resource.hcloud_server.myotherotherotherserver = {
   name = "node4";
   inherit (config.resource.hlcoud_server) image server_type;
 };
@@ -97,8 +97,8 @@ using the [`heredoc`](https://en.wikipedia.org/wiki/Here_document) style.
 variable "multiline" {
   description = <<EOT
 Description for the multi line variable.
-The indention here is not wrong.
-The terminating word must be on a new line without any indention.
+The indentation here is not wrong.
+The terminating word must be on a new line without any indentation.
 EOT
 }
 ```
@@ -109,7 +109,7 @@ In terranix you have to use the nix way of multi line strings.
 ```nix
 variable.multiline.description = ''
   Description for the multi line variable.
-  The indention here is not wrong.
+  The indentation here is not wrong.
   All spaces in front of the text block will be removed by terranix.
 '';
 ```
@@ -119,7 +119,7 @@ variable.multiline.description = ''
 The form `${expression}` is used by terranix and terraform.
 So if you want to use a terraform expression in terranix,
 you have to escape it.
-Escaping differs for multi and singe line strings.
+Escaping differs for multi and single line strings.
 
 ### escaping in single line strings
 

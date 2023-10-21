@@ -22,7 +22,7 @@ includes = ["*.sh"]
 command = "black"
 includes = ["*.py"]
 
-[formater.media]
+[formatter.media]
 command = "prettier"
 options = ["--write"]
 includes = [
