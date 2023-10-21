@@ -7,10 +7,9 @@ includes = [ "*.nix"]
 [formatter.shell]
 command = "shfmt"
 options = [
-    "-i",
-    "2",  # indent 2
-    "-s",  # simplify the code
-    "-w",  # write back to the file
+    "--indent=2",
+    "--simplify",
+    "--write",
 ]
 includes = ["*.sh"]
 
@@ -31,3 +30,7 @@ includes = [
     "*.yaml",
     "*.yml",
 ]
+
+[formatter.spelling]
+command = "codespell"
+includes = ["*.md"]
