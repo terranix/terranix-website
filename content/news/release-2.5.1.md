@@ -13,4 +13,4 @@ for your input on this release.
 
 ## Changelog
 
-- pretty formated json output
+- pretty formatted json output
