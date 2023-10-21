@@ -3,7 +3,7 @@ title: terranix via nix flakes
 draft: false
 order: 90
 summary: |
-    all about terranix and nix flakes
+  all about terranix and nix flakes
 letter: g
 ---
 
@@ -17,6 +17,7 @@ If you don't know what [NixOS](https://nixos.org) or
 ## Using terranix via flakes
 
 You can check out an example using the `template` feature of nix flakes.
+
 ```shell
 nix flake init --template github:terranix/terranix-examples
 ```
@@ -26,6 +27,7 @@ nix flake init --template github:terranix/terranix-examples
 You can render the `config.tf.json` using the `lib.terranixConfiguration`.
 
 Here is a minimal `flake.nix`
+
 ```nix
 {
   inputs.terranix.url = "github:terranix/terranix";
@@ -41,10 +43,10 @@ Here is a minimal `flake.nix`
     };
 }
 ```
+
 You can run `nix build -o config.tf.json`, which should create a `config.tf.json`
 in your current folder.
 Now you are ready to run `terraform`.
-
 
 ### Import terranix modules
 
@@ -55,9 +57,9 @@ inputs.github.url = "github:terranix/terranix-module-github";
 ...
 terraformConfiguration = terranix.lib.terranixConfiguration{
   inherit system;
-  modules = [ 
+  modules = [
     github.terranixModule
-    ./config.nix 
+    ./config.nix
   ];
 };
 ```
@@ -73,8 +75,8 @@ nix flake init --template "github:terranix/terranix-examples#module"
 
 terranix modules should obey the following output structure:
 
-* `terranixModules.<name>`
-* `terranixModule` : contains all `terranixModules` combined of the given flake.
+- `terranixModules.<name>`
+- `terranixModule` : contains all `terranixModules` combined of the given flake.
 
 ### using terranixOptions
 
@@ -85,6 +87,7 @@ which can be easily queried by [jq](https://stedolan.github.io/jq/manual/).
 
 For example you can pull the options.json of the
 [terranix github module](https://github.com/terranix/terranix-module-github)
+
 ```shell
  curl https://raw.githubusercontent.com/terranix/terranix-module-github/main/options.json | \
    jq 'to_entries | .[] |
@@ -108,14 +111,14 @@ you can make use of the `terranixConfigurationAst` or the `terranixOptionsAst` f
 Here is a simple example of using `nix repl` and `terranixConfigurationAst`.
 
 ```nix
-nix-repl> terranixAst = (builtins.getFlake "github:terranix/terranix").lib.terranixConfigurationAst 
-nix-repl> terranix = terranixAst { 
+nix-repl> terranixAst = (builtins.getFlake "github:terranix/terranix").lib.terranixConfigurationAst
+nix-repl> terranix = terranixAst {
   system = "x86_64-linux";
-  modules = [{ 
-    resource.local_file = { 
-      content = "yolo"; 
+  modules = [{
+    resource.local_file = {
+      content = "yolo";
       filename = "./example";
-    }; 
+    };
   }];
 }
 nix-repl> terranix.config.resource.local_file

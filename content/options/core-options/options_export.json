@@ -9,10 +9,7 @@
     ],
     "default": null,
     "description": "etcd backend\nhttps://www.terraform.io/docs/backends/types/etcd.html\n",
-    "loc": [
-      "backend",
-      "etcd"
-    ],
+    "loc": ["backend", "etcd"],
     "readOnly": false,
     "type": "null or submodule"
   },
@@ -25,11 +22,7 @@
       }
     ],
     "description": "A space-separated list of the etcd endpoints\n",
-    "loc": [
-      "backend",
-      "etcd",
-      "endpoints"
-    ],
+    "loc": ["backend", "etcd", "endpoints"],
     "readOnly": false,
     "type": "string"
   },
@@ -43,11 +36,7 @@
     ],
     "default": null,
     "description": "the password\n",
-    "loc": [
-      "backend",
-      "etcd",
-      "password"
-    ],
+    "loc": ["backend", "etcd", "password"],
     "readOnly": false,
     "type": "null or string"
   },
@@ -60,11 +49,7 @@
       }
     ],
     "description": "The path where to store the state\n",
-    "loc": [
-      "backend",
-      "etcd",
-      "path"
-    ],
+    "loc": ["backend", "etcd", "path"],
     "readOnly": false,
     "type": "string"
   },
@@ -78,11 +63,7 @@
     ],
     "default": null,
     "description": "the username\n",
-    "loc": [
-      "backend",
-      "etcd",
-      "username"
-    ],
+    "loc": ["backend", "etcd", "username"],
     "readOnly": false,
     "type": "null or string"
   },
@@ -96,10 +77,7 @@
     ],
     "default": null,
     "description": "local backend\nhttps://www.terraform.io/docs/backends/types/local.html\n",
-    "loc": [
-      "backend",
-      "local"
-    ],
+    "loc": ["backend", "local"],
     "readOnly": false,
     "type": "null or submodule"
   },
@@ -112,11 +90,7 @@
       }
     ],
     "description": "path to the state file\n",
-    "loc": [
-      "backend",
-      "local",
-      "path"
-    ],
+    "loc": ["backend", "local", "path"],
     "readOnly": false,
     "type": "string"
   },
@@ -130,10 +104,7 @@
     ],
     "default": null,
     "description": "s3 backend\nhttps://www.terraform.io/docs/backends/types/s3.html\n",
-    "loc": [
-      "backend",
-      "s3"
-    ],
+    "loc": ["backend", "s3"],
     "readOnly": false,
     "type": "null or submodule"
   },
@@ -146,11 +117,7 @@
       }
     ],
     "description": "bucket name\n",
-    "loc": [
-      "backend",
-      "s3",
-      "bucket"
-    ],
+    "loc": ["backend", "s3", "bucket"],
     "readOnly": false,
     "type": "string"
   },
@@ -163,11 +130,7 @@
       }
     ],
     "description": "path to the state file in the bucket\n",
-    "loc": [
-      "backend",
-      "s3",
-      "key"
-    ],
+    "loc": ["backend", "s3", "key"],
     "readOnly": false,
     "type": "string"
   },
@@ -180,11 +143,7 @@
       }
     ],
     "description": "region of the bucket\n",
-    "loc": [
-      "backend",
-      "s3",
-      "region"
-    ],
+    "loc": ["backend", "s3", "region"],
     "readOnly": false,
     "type": "string"
   },
@@ -199,9 +158,7 @@
     "default": {},
     "description": "Data objects, are queries to use resources which\nare already exist, as if they are created by a the resource\noption.\nSee for more details : https://www.terraform.io/docs/configuration/data-sources.html\n",
     "example": {},
-    "loc": [
-      "data"
-    ],
+    "loc": ["data"],
     "readOnly": false,
     "type": ""
   },
@@ -221,9 +178,7 @@
         "service_name": "forum"
       }
     },
-    "loc": [
-      "locals"
-    ],
+    "loc": ["locals"],
     "readOnly": false,
     "type": ""
   },
@@ -244,9 +199,7 @@
         }
       }
     },
-    "loc": [
-      "module"
-    ],
+    "loc": ["module"],
     "readOnly": false,
     "type": ""
   },
@@ -267,9 +220,7 @@
         }
       }
     },
-    "loc": [
-      "output"
-    ],
+    "loc": ["output"],
     "readOnly": false,
     "type": ""
   },
@@ -291,9 +242,7 @@
         }
       }
     },
-    "loc": [
-      "provider"
-    ],
+    "loc": ["provider"],
     "readOnly": false,
     "type": ""
   },
@@ -307,10 +256,7 @@
     ],
     "description": "PrivateKey for provisioning via ssh access\nsee https://www.terraform.io/docs/provisioners/connection.html\n\nThis is an agnostic option, option-authors should use this options\nto implement server provisioning.\n",
     "example": "~/.ssh/id_rsa",
-    "loc": [
-      "provisioner",
-      "privateKeyFile"
-    ],
+    "loc": ["provisioner", "privateKeyFile"],
     "readOnly": false,
     "type": "string"
   },
@@ -324,10 +270,7 @@
     ],
     "default": {},
     "description": "etcd remote state\nhttps://www.terraform.io/docs/backends/types/etcd.html\n",
-    "loc": [
-      "remote_state",
-      "etcd"
-    ],
+    "loc": ["remote_state", "etcd"],
     "readOnly": false,
     "type": "attribute set of submodules"
   },
@@ -340,12 +283,7 @@
       }
     ],
     "description": "A space-separated list of the etcd endpoints\n",
-    "loc": [
-      "remote_state",
-      "etcd",
-      "<name>",
-      "endpoints"
-    ],
+    "loc": ["remote_state", "etcd", "<name>", "endpoints"],
     "readOnly": false,
     "type": "string"
   },
@@ -359,12 +297,7 @@
     ],
     "default": null,
     "description": "the password\n",
-    "loc": [
-      "remote_state",
-      "etcd",
-      "<name>",
-      "password"
-    ],
+    "loc": ["remote_state", "etcd", "<name>", "password"],
     "readOnly": false,
     "type": "null or string"
   },
@@ -377,12 +310,7 @@
       }
     ],
     "description": "The path where to store the state\n",
-    "loc": [
-      "remote_state",
-      "etcd",
-      "<name>",
-      "path"
-    ],
+    "loc": ["remote_state", "etcd", "<name>", "path"],
     "readOnly": false,
     "type": "string"
   },
@@ -396,12 +324,7 @@
     ],
     "default": null,
     "description": "the username\n",
-    "loc": [
-      "remote_state",
-      "etcd",
-      "<name>",
-      "username"
-    ],
+    "loc": ["remote_state", "etcd", "<name>", "username"],
     "readOnly": false,
     "type": "null or string"
   },
@@ -415,10 +338,7 @@
     ],
     "default": {},
     "description": "local remote state\nhttps://www.terraform.io/docs/backends/types/local.html\n",
-    "loc": [
-      "remote_state",
-      "local"
-    ],
+    "loc": ["remote_state", "local"],
     "readOnly": false,
     "type": "attribute set of submodules"
   },
@@ -431,12 +351,7 @@
       }
     ],
     "description": "path to the state file\n",
-    "loc": [
-      "remote_state",
-      "local",
-      "<name>",
-      "path"
-    ],
+    "loc": ["remote_state", "local", "<name>", "path"],
     "readOnly": false,
     "type": "string"
   },
@@ -450,10 +365,7 @@
     ],
     "default": {},
     "description": "s3 remote state\nhttps://www.terraform.io/docs/backends/types/s3.html\n",
-    "loc": [
-      "remote_state",
-      "s3"
-    ],
+    "loc": ["remote_state", "s3"],
     "readOnly": false,
     "type": "attribute set of submodules"
   },
@@ -466,12 +378,7 @@
       }
     ],
     "description": "bucket name\n",
-    "loc": [
-      "remote_state",
-      "s3",
-      "<name>",
-      "bucket"
-    ],
+    "loc": ["remote_state", "s3", "<name>", "bucket"],
     "readOnly": false,
     "type": "string"
   },
@@ -484,12 +391,7 @@
       }
     ],
     "description": "path to the state file in the bucket\n",
-    "loc": [
-      "remote_state",
-      "s3",
-      "<name>",
-      "key"
-    ],
+    "loc": ["remote_state", "s3", "<name>", "key"],
     "readOnly": false,
     "type": "string"
   },
@@ -502,12 +404,7 @@
       }
     ],
     "description": "region of the bucket\n",
-    "loc": [
-      "remote_state",
-      "s3",
-      "<name>",
-      "region"
-    ],
+    "loc": ["remote_state", "s3", "<name>", "region"],
     "readOnly": false,
     "type": "string"
   },
@@ -531,9 +428,7 @@
         }
       }
     },
-    "loc": [
-      "resource"
-    ],
+    "loc": ["resource"],
     "readOnly": false,
     "type": ""
   },
@@ -558,9 +453,7 @@
         }
       }
     },
-    "loc": [
-      "terraform"
-    ],
+    "loc": ["terraform"],
     "readOnly": false,
     "type": ""
   },
@@ -584,9 +477,7 @@
         }
       }
     },
-    "loc": [
-      "users"
-    ],
+    "loc": ["users"],
     "readOnly": false,
     "type": "attribute set of attribute set of submoduless"
   },
@@ -601,12 +492,7 @@
     "default": null,
     "description": "ssh public key of user\n",
     "example": "${ file( ~/.ssh/id_rsa.pub ) }",
-    "loc": [
-      "users",
-      "<name>",
-      "<name>",
-      "publicKey"
-    ],
+    "loc": ["users", "<name>", "<name>", "publicKey"],
     "readOnly": false,
     "type": "null or string"
   },
@@ -628,9 +514,7 @@
         }
       }
     },
-    "loc": [
-      "variable"
-    ],
+    "loc": ["variable"],
     "readOnly": false,
     "type": ""
   }

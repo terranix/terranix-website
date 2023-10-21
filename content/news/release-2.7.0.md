@@ -1,7 +1,7 @@
 ---
 title: 2.7.0 release
 date: 2023-09-22
-summary: 
+summary:
 ---
 
 Version [2.7.0](https://github.com/terranix/terranix/releases/tag/2.7.0)

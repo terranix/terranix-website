@@ -5,10 +5,10 @@ summary: |
   An opinionated hetzner cloud module.
 ---
 
-An opinionated 
+An opinionated
 [hetzner cloud](https://www.terraform.io/docs/providers/hcloud/index.html)
 module.
-Read more at 
+Read more at
 [https://github.com/terranix/terranix-hcloud](https://github.com/terranix/terranix-hcloud)
 
 ## use with terraform version 0.11

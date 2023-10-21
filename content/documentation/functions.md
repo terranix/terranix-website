@@ -4,8 +4,8 @@ order: 40
 summary: Some terranix functions which are useful including examples.
 letter: f
 feature:
-- /documentation/modules.md
-- /documentation/resources.md
+  - /documentation/modules.md
+  - /documentation/resources.md
 ---
 
 Here are some Functions which are useful.
@@ -41,13 +41,12 @@ in
 Useful to create multiple resources, contains a lot of similar data,
 out of a small set of information that differ.
 
-* `map`
-: map a list to another list.
-* `zipAttrs`
-: Merge sets of attributes and combine each attribute value in to a list.
+- `map`
+  : map a list to another list.
+- `zipAttrs`
+  : Merge sets of attributes and combine each attribute value in to a list.
 
-
-The following Example shows how to create 3 S3-buckets with similar  configuration.
+The following Example shows how to create 3 S3-buckets with similar configuration.
 
 ```nix
 { lib, ... }:

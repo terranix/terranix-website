@@ -36,6 +36,7 @@ A huge list of providers is available on
 #### Definition of multiple identical providers
 
 Here is an example of how you would [define multiple providers of the same kind](https://www.terraform.io/language/syntax/json#provider-blocks)
+
 ```nix
 provider.aws = [{
   region = "us-east-1";
@@ -62,5 +63,3 @@ so handle secrets always with care!
 terranix is a tool that enables you to render the `config.tf.json` file.
 It uses the NixOS module system and gives you tools like `terranix-doc-man` and `terranix-doc-json`
 to generate documentation of terranix modules.
-
-

@@ -7,7 +7,7 @@ summary: version 2.5.0 with some fixes and flake updates is here.
 Version [2.5.0](https://github.com/terranix/terranix/releases/tag/2.5.0)
 is released.
 
-Thanks to 
+Thanks to
 [betaboon](https://github.com/betaboon)
 [KarolisL](https://github.com/KarolisL)
 for your input and help on this release.

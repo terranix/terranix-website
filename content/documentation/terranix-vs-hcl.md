@@ -4,9 +4,9 @@ order: 30
 summary: Syntax differences between terranix and HCL
 letter: t
 feature:
-- /documentation/functions.md
-- /documentation/modules.md
-- /documentation/getting-started.md
+  - /documentation/functions.md
+  - /documentation/modules.md
+  - /documentation/getting-started.md
 ---
 
 **HCL** is the language of terraform.
@@ -40,10 +40,11 @@ resource."aws_instance"."web" = {
 
 ## references
 
-In **HCL** you can only reference variable outputs. 
+In **HCL** you can only reference variable outputs.
 But in terranix, because it is nix, you can basically reference everything.
 
 For example if you have a resource and you want to reuse its parameters:
+
 ```nix
 resource.hcloud_server.myserver = {
   name = "node1";
@@ -61,7 +62,6 @@ resource.hcloud_server.myotherserver = {
   server_type = "\${ hcloud_server.myserver.server_type }";
 };
 ```
-
 
 Or the terranix way:
 

@@ -3,13 +3,13 @@ title: Getting Started
 draft: false
 order: 10
 summary: |
-    You know nix and terraform and want to see how to terranix
-    works? This the place to start.
+  You know nix and terraform and want to see how to terranix
+  works? This the place to start.
 letter: g
 feature:
-- /documentation/what-is-terranix.md
-- /documentation/terranix-vs-hcl.md
-- /documentation/modules.md
+  - /documentation/what-is-terranix.md
+  - /documentation/terranix-vs-hcl.md
+  - /documentation/modules.md
 ---
 
 Let's have a quick overview on how you would use terranix.
@@ -31,7 +31,7 @@ which holds your terranix and terraform setup.
 { pkgs ? import <nixpkgs> { } }:
 let
   hcloud_api_token = "`${pkgs.pass}/bin/pass development/hetzner.com/api-token`";
-  
+
   terraform = pkgs.writers.writeBashBin "terraform" ''
     export TF_VAR_hcloud_api_token=${hcloud_api_token}
     ${pkgs.terraform_0_15}/bin/terraform "$@"
@@ -71,7 +71,7 @@ and run `terraform apply`
 to let terraform do it's magic.
 
 ```shell
-terranix config.nix > config.tf.json 
+terranix config.nix > config.tf.json
 terraform init && terraform apply
 ```
 

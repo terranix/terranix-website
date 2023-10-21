@@ -7,7 +7,7 @@ summary: version 2.5.1 introducing pretty json output
 Version [2.5.1](https://github.com/terranix/terranix/releases/tag/2.5.1)
 is released.
 
-Thanks to 
+Thanks to
 [terlar](https://github.com/terlar)
 for your input on this release.
 

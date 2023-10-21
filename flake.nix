@@ -8,11 +8,25 @@
   outputs = { self, nixpkgs, flake-utils, terranix-examples }:
     (flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
-      in {
+      in
+      {
 
         # nix develop
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [ hugo lessc rake go-task feh ion inotify-tools ];
+          buildInputs = with pkgs; [
+            hugo
+            lessc
+            rake
+            go-task
+            feh
+            ion
+            inotify-tools
+            treefmt
+            nixpkgs-fmt
+            shfmt
+            black
+            nodePackages.prettier
+          ];
         };
 
         # nix run

@@ -7,7 +7,7 @@ summary: version 2.5.2 providing ast functions as flake
 Version [2.5.2](https://github.com/terranix/terranix/releases/tag/2.5.2)
 is released.
 
-Thanks to 
+Thanks to
 [terlar](https://github.com/terlar)
 for your input on this release.
 
@@ -16,6 +16,6 @@ for your input on this release.
 - add terranixConfigurationAst
 - add terranixOptionAst
 
-Have a look at 
+Have a look at
 [the flakes documentation]({{< ref "documentation/flakes.md#using-terranixconfigurationast-or-terranixconfigurationast" >}})
 if you want to know how to use these functions.
