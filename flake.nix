@@ -36,6 +36,7 @@
           src = self;
           nativeBuildInputs = [ pkgs.lessc pkgs.go-task pkgs.ion pkgs.hugo ];
 
+          patchPhase = "substituteInPlace config.yaml --replace 'http://terranix.org' 'https://terranix.github.io/terranix-website/'";
           buildPhase = "task build";
           installPhase = "cp -r public $out";
         };
