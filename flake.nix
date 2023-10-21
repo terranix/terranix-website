@@ -29,6 +29,17 @@
           ];
         };
 
+        # nix build
+        packages.default = pkgs.stdenv.mkDerivation {
+          name = "terranix-website";
+
+          src = self;
+          nativeBuildInputs = [ pkgs.lessc pkgs.go-task pkgs.ion pkgs.hugo ];
+
+          buildPhase = "task build";
+          installPhase = "cp -r public $out";
+        };
+
         # nix run
         apps.default = self.apps.${system}.server;
 
