@@ -50,7 +50,7 @@ Of course, you can use `apps` to do everything at once.
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      terraform = pkgs.terraform_0_15;
+      terraform = pkgs.terraform;
       terraformConfiguration = terranix.lib.terranixConfiguration {
         inherit system;
         modules = [ ./config.nix ];

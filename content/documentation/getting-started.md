@@ -34,7 +34,7 @@ let
 
   terraform = pkgs.writers.writeBashBin "terraform" ''
     export TF_VAR_hcloud_api_token=${hcloud_api_token}
-    ${pkgs.terraform_0_15}/bin/terraform "$@"
+    ${pkgs.terraform}/bin/terraform "$@"
   '';
 
 in pkgs.mkShell {
