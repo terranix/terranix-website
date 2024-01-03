@@ -1,3 +1,5 @@
+> Old version of terranix.org. See [terranix/terranix.github.io](https://github.com/terranix/terranix.github.io) for current version.
+
 [terranix.org](https://terranix.org) source code
 
 ```
